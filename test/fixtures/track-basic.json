@@ -1,0 +1,14 @@
+{
+  "input": {
+    "type": "track",
+    "userId": "user-id",
+    "event": "my-event",
+    "timestamp": "2014",
+    "properties": {
+      "revenue": 19.99
+    }
+  },
+  "output": {
+    "text": "User user-id did my-event"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "input": {
+    "type": "track",
+    "userId": "user-id",
+    "event": "my-event",
+    "timestamp": "2014",
+    "context": {
+      "traits": {
+        "username": "prateek"
+      }
+    }
+  },
+  "output": {
+    "text": "prateek did my-event"
+  }
+}
