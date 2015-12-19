@@ -6,11 +6,11 @@
     "timestamp": "2014",
     "context": {
       "traits": {
-        "name": "Prateek Srivastava"
+        "username": "prateek"
       }
     }
   },
   "output": {
-    "text": "Prateek Srivastava did my-event."
+    "text": "prateek my-event"
   }
 }
