@@ -12,6 +12,9 @@
     "text": "User user-id did my-event.",
     "attachments": [
       {
+        "author_icon": "https://logo.clearbit.com/segment.com",
+        "author_link": "https://segment.com/",
+        "author_name": "@segment",
         "fields": [
           {
             "short": true,
