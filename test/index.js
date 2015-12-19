@@ -12,7 +12,8 @@ describe('Slack', function() {
   beforeEach(function(){
     settings = {
       webhookUrl: 'https://hooks.slack.com/services/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',
-      channels: {}
+      channels: {},
+      templates: {}
     };
     slack = new Slack(settings);
     test = Test(slack, __dirname);
@@ -104,6 +105,21 @@ describe('Slack', function() {
       output.icon_url = 'https://logo.clearbit.com/segment.com';
       settings.channels = {
         "my-event": "#testing-slack-api"
+      };
+      test
+        .set(settings)
+        .track(json.input)
+        .sends(output)
+        .expects(200, done);
+    });
+
+    it('should map track calls with custom templates correctly', function(done){
+      var json = test.fixture('track-template');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      settings.templates = {
+        "my-event": "{{name}} {{event}}"
       };
       test
         .set(settings)
