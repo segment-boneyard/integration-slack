@@ -9,6 +9,30 @@
     }
   },
   "output": {
-    "text": "User user-id did my-event."
+    "text": "User user-id did my-event.",
+    "attachments": [
+      {
+        "author_icon": "https://logo.clearbit.com/segment.com",
+        "author_link": "https://segment.com/",
+        "author_name": "@segment",
+        "fields": [
+          {
+            "short": true,
+            "title": "userId",
+            "value": "user-id"
+          },
+          {
+            "short": true,
+            "title": "event",
+            "value": "my-event"
+          },
+          {
+            "short": true,
+            "title": "properties.revenue",
+            "value": 19.99
+          }
+        ]
+      }
+    ]
   }
 }
