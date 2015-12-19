@@ -12,6 +12,32 @@
     }
   },
   "output": {
-    "text": "Prateek Srivastava did my-event."
+    "text": "Prateek Srivastava did my-event.",
+    "attachments": [
+      {
+        "fields": [
+          {
+            "short": true,
+            "title": "userId",
+            "value": "user-id"
+          },
+          {
+            "short": true,
+            "title": "event",
+            "value": "my-event"
+          },
+          {
+            "short": true,
+            "title": "context.traits.firstName",
+            "value": "Prateek"
+          },
+          {
+            "short": true,
+            "title": "context.traits.lastName",
+            "value": "Srivastava"
+          }
+        ]
+      }
+    ]
   }
 }

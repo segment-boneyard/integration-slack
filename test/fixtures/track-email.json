@@ -11,6 +11,27 @@
     }
   },
   "output": {
-    "text": "prateek@segment.com did my-event."
+    "text": "prateek@segment.com did my-event.",
+    "attachments": [
+      {
+        "fields": [
+          {
+            "short": true,
+            "title": "userId",
+            "value": "user-id"
+          },
+          {
+            "short": true,
+            "title": "event",
+            "value": "my-event"
+          },
+          {
+            "short": true,
+            "title": "context.traits.email",
+            "value": "prateek@segment.com"
+          }
+        ]
+      }
+    ]
   }
 }
