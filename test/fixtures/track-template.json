@@ -1,20 +1,15 @@
 {
   "input": {
     "type": "track",
-    "userId": "user-id",
+    "anonymousId": "anonymous-id",
     "event": "Completed Order",
     "timestamp": "2014",
     "properties": {
       "revenue": 19.99
-    },
-    "context": {
-      "traits": {
-        "firstName": "Prateek"
-      }
     }
   },
   "output": {
-    "text": "Prateek bought an item worth $19.99",
+    "text": "Anonymous user anonymous-id bought an item worth $19.99",
     "attachments": [
       {
         "author_icon": "https://logo.clearbit.com/segment.com",
@@ -23,8 +18,8 @@
         "fields": [
           {
             "short": true,
-            "title": "userId",
-            "value": "user-id"
+            "title": "anonymousId",
+            "value": "anonymous-id"
           },
           {
             "short": true,
@@ -35,11 +30,6 @@
             "short": true,
             "title": "properties.revenue",
             "value": 19.99
-          },
-          {
-            "short": true,
-            "title": "context.traits.firstName",
-            "value": "Prateek"
           }
         ]
       }
