@@ -2,8 +2,11 @@
   "input": {
     "type": "track",
     "userId": "user-id",
-    "event": "my-event",
+    "event": "Completed Order",
     "timestamp": "2014",
+    "properties": {
+      "revenue": 19.99
+    },
     "context": {
       "traits": {
         "firstName": "Prateek"
@@ -11,7 +14,7 @@
     }
   },
   "output": {
-    "text": "Prateek my-event",
+    "text": "Prateek bought an item worth $19.99",
     "attachments": [
       {
         "author_icon": "https://logo.clearbit.com/segment.com",
@@ -26,7 +29,12 @@
           {
             "short": true,
             "title": "event",
-            "value": "my-event"
+            "value": "Completed Order"
+          },
+          {
+            "short": true,
+            "title": "properties.revenue",
+            "value": 19.99
           },
           {
             "short": true,
