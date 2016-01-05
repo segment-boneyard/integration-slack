@@ -119,7 +119,7 @@ describe('Slack', function() {
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
       settings.templates = {
-        "my-event": "{{name}} {{event}}"
+        "Completed Order": "{{name}} bought an item worth ${{properties.revenue}}"
       };
       test
         .set(settings)
