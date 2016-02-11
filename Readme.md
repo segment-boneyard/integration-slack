@@ -1,5 +1,5 @@
 
-# integration-slack [![Circle CI](https://circleci.com/gh/segmentio/integration-slack.png?style=badge)](https://circleci.com/gh/segmentio/integration-slack)
+# integration-slack [![Circle CI](https://circleci.com/gh/segmentio/integration-slack.png?style=svg)](https://circleci.com/gh/segmentio/integration-slack)
 
 Slack server-side integration for Segment.
 
