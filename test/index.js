@@ -22,7 +22,7 @@ describe('Slack', function() {
   it('should have the correct settings', function(){
     test
       .name('Slack')
-      .channels(['server', 'mobile', 'browser'])
+      .channels(['server', 'mobile', 'client'])
       .ensure('settings.webhookUrl');
   });
 
