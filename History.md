@@ -1,4 +1,11 @@
 
+1.0.5 / 2016-02-19
+==================
+
+  * test: fix channels typo
+  * add docker, refactor circle
+
+
 1.0.4 / 2016-01-08
 ==================
 
