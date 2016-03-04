@@ -14,11 +14,8 @@
   },
   "dependencies": {
     "extend": "^3.0.0",
-    "flat": "^1.6.0",
     "handlebars": "^4.0.5",
     "locale-string": "^1.0.0",
-    "lodash.map": "^3.1.4",
-    "lodash.omit": "^3.1.0",
     "obj-case": "^0.1.1",
     "reject": "0.0.1",
     "segmentio-integration": "^3.0.5",
