@@ -9,30 +9,6 @@
     }
   },
   "output": {
-    "text": "Anonymous user anonymous-id bought an item worth $19.99",
-    "attachments": [
-      {
-        "author_icon": "https://logo.clearbit.com/segment.com",
-        "author_link": "https://segment.com/",
-        "author_name": "@segment",
-        "fields": [
-          {
-            "short": true,
-            "title": "anonymousId",
-            "value": "anonymous-id"
-          },
-          {
-            "short": true,
-            "title": "event",
-            "value": "Completed Order"
-          },
-          {
-            "short": true,
-            "title": "properties.revenue",
-            "value": 19.99
-          }
-        ]
-      }
-    ]
+    "text": "Anonymous user anonymous-id bought an item worth $19.99"
   }
 }
