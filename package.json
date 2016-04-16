@@ -22,8 +22,11 @@
     "to-title-case": "^0.1.5"
   },
   "devDependencies": {
+    "@segment/eslint-config": "^3.0.0",
+    "eslint": "^2.8.0",
+    "eslint-plugin-mocha": "^2.2.0",
+    "eslint-plugin-require-path-exists": "^1.1.5",
     "istanbul": "0.x",
-    "jscs": "1.x",
     "locale-string": "1.1.0",
     "merge-util": "^0.1.0",
     "mocha": "2.x",
