@@ -49,6 +49,20 @@ describe('Slack', function() {
         .expects(200, done);
     });
 
+    it('should fail invalid templates gracefully', function(done){
+      var json = test.fixture('track-basic');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      settings.templates = {
+        "my-event": "{{invalid template"
+      };
+      test
+        .set(settings)
+        .track(json.input)
+        .error(done);
+    });
+
     it('should map track calls with email correctly', function(done){
       var json = test.fixture('track-email');
       var output = json.output;
