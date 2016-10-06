@@ -1,4 +1,9 @@
 
+1.0.7 / 2016-10-06
+==================
+
+  * Gracefully handle when an invalid template is supplied
+
 1.0.6 / 2016-03-04
 ==================
 
