@@ -1,0 +1,14 @@
+{
+  "input": {
+    "type": "track",
+    "userId": "gucci mane",
+    "event": "Got a new tattoo",
+    "timestamp": "2016",
+    "properties": {
+      "comment": "beta testing with single quote: ' , double quotes: \" , equal signs: = , and that single tick: ` below the squiggly line: ~"
+    }
+  },
+  "output": {
+    "text": "beta testing with single quote: ' , double quotes: \" , equal signs: = , and that single tick: ` below the squiggly line: ~"
+  }
+}
