@@ -141,5 +141,20 @@ describe('Slack', function() {
         .sends(output)
         .expects(200, done);
     });
+
+    it('should decode HTML entities from templates', function(done){
+      var json = test.fixture('track-entities');
+      var output = json.output;
+      settings.templates = {
+        'Got a new tattoo': '{{properties.comment}}'
+      };
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+        .set(settings)
+        .track(json.input)
+        .sends(output)
+        .expects(200, done);
+    });
   });
 });
