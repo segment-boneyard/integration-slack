@@ -1,4 +1,9 @@
 
+1.0.8 / 2016-12-13
+==================
+
+  * Decode any HTML entities to properly render templates 
+
 1.0.7 / 2016-10-06
 ==================
 
