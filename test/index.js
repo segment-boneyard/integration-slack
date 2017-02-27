@@ -48,17 +48,6 @@ describe('Slack', function() {
         .sends(output)
         .expects(200, done);
     });
-
-    it('should fail identify calls without email address', function(done) {
-      var json = test.fixture('identify-no-email');
-      var output = json.output;
-      output.username = 'Segment';
-      output.icon_url = 'https://logo.clearbit.com/segment.com';
-      test
-        .set(settings)
-        .identify(json.input)
-        .error(done)
-    });
   });
 
   describe('.track()', function() {
