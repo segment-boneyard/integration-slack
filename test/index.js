@@ -36,6 +36,20 @@ describe('Slack', function() {
     });
   });
 
+  describe('.identify()', function() {
+    it('should map identify calls correctly', function(done) {
+      var json = test.fixture('identify-basic');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+        .set(settings)
+        .identify(json.input)
+        .sends(output)
+        .expects(200, done);
+    });
+  });
+
   describe('.track()', function() {
     it('should map track calls correctly', function(done){
       var json = test.fixture('track-basic');
