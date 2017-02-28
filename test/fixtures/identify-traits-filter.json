@@ -6,10 +6,11 @@
     "traits": {
       "firstName": "Andy",
       "lastName": "Jiang",
+      "newUser": true,
       "email": "andy@segment.com"
     }
   },
   "output": {
-    "text": "Identified user, Andy Jiang at andy@segment.com. \nfirstName: Andy\nlastName: Jiang\nemail: andy@segment.com\nid: user-id\n"
+    "text": "Identified user, Andy Jiang at andy@segment.com. \nfirstName: Andy\nlastName: Jiang\nnewUser: true\nemail: andy@segment.com\nid: user-id\n"
   }
 }

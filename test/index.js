@@ -13,7 +13,8 @@ describe('Slack', function() {
     settings = {
       webhookUrl: 'https://hooks.slack.com/services/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',
       channels: {},
-      templates: {}
+      templates: {},
+      traits: []
     };
     slack = new Slack(settings);
     test = Test(slack, __dirname);
@@ -47,6 +48,31 @@ describe('Slack', function() {
         .identify(json.input)
         .sends(output)
         .expects(200, done);
+    });
+
+    it('should allow calls through on set traits', function(done) {
+      var json = test.fixture('identify-traits-filter');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      settings.traits.push('newUser');
+      test
+        .set(settings)
+        .identify(json.input)
+        .sends(output)
+        .expects(200, done);
+    });
+
+    it('should ignore calls that do not contain set traits', function(done) {
+      var json = test.fixture('identify-traits-filter');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      settings.traits.push('company');
+      test
+        .set(settings)
+        .identify(json.input)
+        .error(done);
     });
   });
 
