@@ -14,7 +14,8 @@ describe('Slack', function() {
       webhookUrl: 'https://hooks.slack.com/services/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',
       channels: {},
       templates: {},
-      traits: []
+      whiteListedTraits: [],
+      identifyTemplates: {}
     };
     slack = new Slack(settings);
     test = Test(slack, __dirname);
@@ -55,7 +56,7 @@ describe('Slack', function() {
       var output = json.output;
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
-      settings.traits.push('newUser');
+      settings.whiteListedTraits = ['newUser'];
       test
         .set(settings)
         .identify(json.input)
@@ -68,11 +69,41 @@ describe('Slack', function() {
       var output = json.output;
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
-      settings.traits.push('company');
+      settings.whiteListedTraits = ['company'];
       test
         .set(settings)
         .identify(json.input)
         .error(done);
+    });
+
+
+    it('should fail invalid templates gracefully', function(done) {
+      var json = test.fixture('identify-basic');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      settings.identifyTemplates = {
+        "identify": "{{invalid template"
+      };
+      test
+        .set(settings)
+        .identify(json.input)
+        .error(done);
+    });
+
+    it('should map identify calls with custom templates correctly', function(done){
+      var json = test.fixture('identify-template');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      settings.identifyTemplates = {
+        "identify": "Yo, check out this user {{name}}: \n{{traits}}"
+      };
+      test
+        .set(settings)
+        .identify(json.input)
+        .sends(output)
+        .expects(200, done);
     });
   });
 
