@@ -1,7 +1,6 @@
 {
   "name": "@segment/integration-slack",
   "version": "1.2.1",
-  
   "description": "Slack server-side integration",
   "author": "Segment <friends@segment.com>",
   "repository": {
