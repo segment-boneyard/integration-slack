@@ -36,6 +36,12 @@ describe('Slack', function() {
     it('should be valid with a webhookUrl', function(){
       test.valid({}, { webhookUrl: 'webhookUrl' });
     });
+
+    it('should not send any identify calls that do not contain white listed traits', function() {
+      settings.whiteListedTraits = ['this_identify_call_does_not_have_this_trait'];
+      var json = test.fixture('identify-basic');
+      test.invalid(json.input, settings);
+    });
   });
 
   describe('.identify()', function() {
@@ -51,31 +57,18 @@ describe('Slack', function() {
         .expects(200, done);
     });
 
-    it('should allow calls through on set traits', function(done) {
+    it('should send identify calls that contain all white listed traits', function(done) {
       var json = test.fixture('identify-traits-filter');
       var output = json.output;
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
-      settings.whiteListedTraits = ['newUser'];
+      settings.whiteListedTraits = ['this_identify_call_has_this_trait'];
       test
         .set(settings)
         .identify(json.input)
         .sends(output)
         .expects(200, done);
     });
-
-    it('should ignore calls that do not contain set traits', function(done) {
-      var json = test.fixture('identify-traits-filter');
-      var output = json.output;
-      output.username = 'Segment';
-      output.icon_url = 'https://logo.clearbit.com/segment.com';
-      settings.whiteListedTraits = ['company'];
-      test
-        .set(settings)
-        .identify(json.input)
-        .error(done);
-    });
-
 
     it('should fail invalid templates gracefully', function(done) {
       var json = test.fixture('identify-basic');
