@@ -37,9 +37,21 @@ describe('Slack', function() {
       test.valid({}, { webhookUrl: 'webhookUrl' });
     });
 
-    it('should not send any identify calls that do not contain white listed traits', function() {
+    it('should not send any identify calls if there are no white listed traits', function() {
+      settings.whiteListedTraits = [];
+      var json = test.fixture('identify-basic');
+      test.invalid(json.input, settings);
+    });
+
+    it('should not send any identify calls that do not contain any white listed traits', function() {
       settings.whiteListedTraits = ['this_identify_call_does_not_have_this_trait'];
       var json = test.fixture('identify-basic');
+      test.invalid(json.input, settings);
+    });
+
+    it('should not send any identify calls that do not contain one white listed trait', function() {
+      settings.whiteListedTraits = ['this_identify_call_has_this_trait', 'this_identify_call_does_not_have_this_trait'];
+      var json = test.fixture('identify-traits-filter');
       test.invalid(json.input, settings);
     });
   });
