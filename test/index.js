@@ -57,12 +57,25 @@ describe('Slack', function() {
         .expects(200, done);
     });
 
-    it('should send identify calls that contain all white listed traits', function(done) {
+    it('should send identify calls that contain one white listed trait', function(done) {
       var json = test.fixture('identify-traits-filter');
       var output = json.output;
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
       settings.whiteListedTraits = ['this_identify_call_has_this_trait'];
+      test
+        .set(settings)
+        .identify(json.input)
+        .sends(output)
+        .expects(200, done);
+    });
+
+    it('should send identify calls that contain all white listed trait', function(done) {
+      var json = test.fixture('identify-traits-filter-multiple');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      settings.whiteListedTraits = ['this_identify_call_has_this_trait', 'this_identify_call_also_has_this_trait'];
       test
         .set(settings)
         .identify(json.input)
