@@ -10,6 +10,6 @@
     }
   },
   "output": {
-    "text": "Identified user, Andy Jiang at andy@segment.com. \nfirstName: Andy\nlastName: Jiang\nemail: andy@segment.com\nid: user-id\n"
+    "text": "Identified Andy Jiang. \nfirstName: Andy\nlastName: Jiang\nemail: andy@segment.com\nid: user-id\n"
   }
 }
