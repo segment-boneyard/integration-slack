@@ -6,7 +6,7 @@
     "timestamp": "2014",
     "properties": {
       "revenue": 19.99,
-      "unfurl-links": true,
+      "unfurl_links": true,
       "attachments": [
         {
           "fallback": "New ticket from Andrea Lee - Ticket #1943: Can't rest my password - https://groove.hq/path/to/ticket/1943",
@@ -21,7 +21,7 @@
   },
   "output": {
     "text": "User user-id did my-event.",
-    "unfurl-links": true,
+    "unfurl_links": true,
     "attachments": [
       {
         "fallback": "New ticket from Andrea Lee - Ticket #1943: Can't rest my password - https://groove.hq/path/to/ticket/1943",

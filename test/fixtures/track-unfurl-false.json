@@ -6,13 +6,13 @@
     "timestamp": "2014",
     "properties": {
       "revenue": 19.99,
-      "unfurl-links": false,
-      "unfurl-media": false
+      "unfurl_links": false,
+      "unfurl_media": false
     }
   },
   "output": {
     "text": "User user-id did my-event.",
-    "unfurl-links": false,
-    "unfurl-media": false
+    "unfurl_links": false,
+    "unfurl_media": false
   }
 }
