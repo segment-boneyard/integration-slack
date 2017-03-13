@@ -156,5 +156,29 @@ describe('Slack', function() {
         .sends(output)
         .expects(200, done);
     });
+
+    it('should pass through an attachment to the Slack API call', function(done){
+      var json = test.fixture('track-attachment');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+          .set(settings)
+          .track(json.input)
+          .sends(output)
+          .expects(200, done);
+    });
+
+    it('should pass through multiple attachments to the Slack API call', function(done){
+      var json = test.fixture('track-attachment');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+          .set(settings)
+          .track(json.input)
+          .sends(output)
+          .expects(200, done);
+    });
   });
 });
