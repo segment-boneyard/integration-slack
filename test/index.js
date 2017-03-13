@@ -15,7 +15,7 @@ describe('Slack', function() {
       channels: {},
       templates: {},
       whiteListedTraits: [],
-      identifyTemplates: {}
+      identifyTemplate: ''
     };
     slack = new Slack(settings);
     test = Test(slack, __dirname);
@@ -100,9 +100,7 @@ describe('Slack', function() {
       var output = json.output;
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
-      settings.identifyTemplates = {
-        "identify": "{{invalid template"
-      };
+      settings.identifyTemplate = '{{invalid template';
       test
         .set(settings)
         .identify(json.input)
@@ -114,9 +112,7 @@ describe('Slack', function() {
       var output = json.output;
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
-      settings.identifyTemplates = {
-        "identify": "Yo, check out this user {{name}}: \n{{traits}}"
-      };
+      settings.identifyTemplate = "Yo, check out this user {{name}}: \n{{traits}}";
       test
         .set(settings)
         .identify(json.input)
