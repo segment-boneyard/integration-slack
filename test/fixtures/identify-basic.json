@@ -1,0 +1,15 @@
+{
+  "input": {
+    "type": "identify",
+    "userId": "user-id",
+    "timestamp": "2014",
+    "traits": {
+      "firstName": "Andy",
+      "lastName": "Jiang",
+      "email": "andy@segment.com"
+    }
+  },
+  "output": {
+    "text": "Identified Andy Jiang. \nfirstName: Andy\nlastName: Jiang\nemail: andy@segment.com\nid: user-id\n"
+  }
+}

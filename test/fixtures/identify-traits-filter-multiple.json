@@ -1,0 +1,17 @@
+{
+  "input": {
+    "type": "identify",
+    "userId": "user-id",
+    "timestamp": "2014",
+    "traits": {
+      "firstName": "Andy",
+      "lastName": "Jiang",
+      "this_identify_call_has_this_trait": true,
+      "this_identify_call_also_has_this_trait": false,
+      "email": "andy@segment.com"
+    }
+  },
+  "output": {
+    "text": "Identified Andy Jiang. \nfirstName: Andy\nlastName: Jiang\nthis_identify_call_has_this_trait: true\nthis_identify_call_also_has_this_trait: false\nemail: andy@segment.com\nid: user-id\n"
+  }
+}
