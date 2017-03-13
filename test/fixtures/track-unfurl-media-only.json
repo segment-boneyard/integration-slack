@@ -1,0 +1,16 @@
+{
+  "input": {
+    "type": "track",
+    "userId": "user-id",
+    "event": "my-event",
+    "timestamp": "2014",
+    "properties": {
+      "revenue": 19.99,
+      "unfurl-media": true
+    }
+  },
+  "output": {
+    "text": "User user-id did my-event.",
+    "unfurl-media": true
+  }
+}

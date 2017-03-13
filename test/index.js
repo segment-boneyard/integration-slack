@@ -170,7 +170,55 @@ describe('Slack', function() {
     });
 
     it('should pass through multiple attachments to the Slack API call', function(done) {
-      var json = test.fixture('track-attachment');
+      var json = test.fixture('track-attachments');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+          .set(settings)
+          .track(json.input)
+          .sends(output)
+          .expects(200, done);
+    });
+
+    it('should pass both "unfurls" as false if explicitly present', function(done) {
+      var json = test.fixture('track-unfurl-false');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+          .set(settings)
+          .track(json.input)
+          .sends(output)
+          .expects(200, done);
+    });
+
+    it('should pass "unfurl-links" as true if explicitly present', function(done) {
+      var json = test.fixture('track-unfurl-links-only');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+          .set(settings)
+          .track(json.input)
+          .sends(output)
+          .expects(200, done);
+    });
+
+    it('should pass "unfurl-media" as true if explicitly present', function(done) {
+      var json = test.fixture('track-unfurl-media-only');
+      var output = json.output;
+      output.username = 'Segment';
+      output.icon_url = 'https://logo.clearbit.com/segment.com';
+      test
+          .set(settings)
+          .track(json.input)
+          .sends(output)
+          .expects(200, done);
+    });
+
+    it('should pass "unfurl" and "attachments" fields', function(done) {
+      var json = test.fixture('track-unfurl-and-attachments');
       var output = json.output;
       output.username = 'Segment';
       output.icon_url = 'https://logo.clearbit.com/segment.com';
